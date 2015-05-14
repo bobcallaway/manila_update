@@ -232,7 +232,7 @@
 
                 <section style="font-size: 20pt">
                 <h3>Manila pools support in Kilo</h3>
-                <h5>Exposes vendor-specific storage constructs from heterogeneous systems through Manila API</h5>
+                <h5>Exposes vendor-specific storage constructs from<br/>heterogeneous systems through Manila API</h5>
                 <table style="font-size: 12pt">
                     <tr>
                         <td style="vertical-align: top" width="33%">
@@ -254,7 +254,43 @@
                 </table>
                 </section>
 
-                <section tagcloud large>
+                <section style="font-size: 20pt">
+                <h3>Deliver workload-aligned shared file storage offerings</h3>
+                <h5>Create a storage service catalog that maps the differentiated features of storage to Manila</h5>
+                <table style="font-size: 16pt">
+                    <tr>
+                        <td width="60%">
+                            <img width="600px" style="border-style: none" src="images/manila_share_types.png"/>
+                        </td>
+                        <td style="vertical-align: top" width="40%">
+                            <ul>
+                                <br/>
+                                <li>Map features of underlying storage to create classes of service</li>
+                                <ul>
+                                    <li>Aligned to workloads - for example:</li>
+                                    <ul>
+                                        <li>Database needs high IOPS, and data protection</li>
+                                        <li>Temporal needs thin provisioning and compression</li>
+                                    </ul>
+                                </ul>
+                                <br/>
+                                <li>Ensure that consumption matches intent</li>
+                                <ul>
+                                    <li>Showback, chargeback, etc</li>
+                                </ul>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+                </section>
+
+                <section style="font-size: 20pt">
+                <h3>Heat with Manila</h3>
+                <h5>Adding shared file systems as first-class resources in Heat templates</h5>
+                <img style="border-style: none" src="images/manila_heat.png"/>
+                </section>
+
+                <section tagcloud>
                     Horizon Manila-UI
                     Manage / Unmanage
                     oslo_*
@@ -278,6 +314,50 @@
                     snapshot quota
                 </section>
 
+                <section style="font-size: 20pt">
+                <h3>Manila-UI</h3>
+                <h5>Horizon: The OpenStack Dashboard Project</h5>
+                <ul>
+                    <li>Became official for Kilo</li>
+                    <li>Is a Horizon sub-project</li>
+                    <li>Follows the current recommended integration model</li>
+                </ul>
+                <table>
+                    <tr>
+                        <td width="60%">
+                <img style="border-style: none" src="images/manila_ui.png"/>
+            </td>
+        </td>
+        <td width="40%" style="vertical-align: top; font-size: 14pt">
+            <p>Maintained and reviewed jointly by the Manila and Horizon teams</p>
+            <ul>
+                <li>Source Code: https://github.com/openstack/manila-ui</li>
+                <li>Python Package Index: https://pypi.python.org/pypi/manila-ui</li>
+                <li>Bugs or Blueprints: https://launchpad.net/manila-ui</li>
+            </ul>
+        </td>
+    </table>
+                </section>
+
+                <section>
+					<h3>Get Involved with Manila!</h3>
+                    <ul>
+                        <li>https://github.com/openstack/manila</li>
+                        <li>https://github.com/openstack/python-manilaclient</li>
+                        <li>https://github.com/openstack/manila-ui</li>
+                        <br/>
+                        <li>https://wiki.openstack.org/wiki/Manila</li>
+                        <li>https://launchpad.net/manila</li>
+                        <br/>
+                        <li><code>#openstack-manila</code> on IRC (Freenode)</li>
+                        <li>Weekly meetings @ Thursday, 15:00 UTC</li>
+                    </ul>
+				</section>
+
+				<section data-background="http://www.openstack.org/summit/images/summit-vancouver-bkgd.jpg" data-state="img-right">
+					<h1 style="color:white">Q &amp; A</h1>
+				</section>
+<!--
                 <section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png">
                 <h2>Image Backgrounds</h2>
                         <pre><code>&lt;section data-background="image.png"&gt;</code></pre>
@@ -347,7 +427,7 @@ function linkify( selector ) {
 						- <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
 					</p>
 				</section>
-
+                -->
 			</div>
 
 		</div>
