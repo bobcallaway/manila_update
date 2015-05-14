@@ -4,10 +4,10 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js - The HTML Presentation Framework</title>
+		<title>Manila: An Update on OpenStack's Shared File Services Program</title>
 
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+		<meta name="description" content="Manila: An Update on OpenStack's Shared File Services Program">
+		<meta name="author" content="Bob Callaway, Sean Cohen, Mark Sturdevant">
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -15,7 +15,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+		<link rel="stylesheet" href="css/custom.css">
+		<link rel="stylesheet" href="css/theme/sky.css" id="theme">
 
 		<!-- Code syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -40,176 +41,248 @@
 
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
-				<section>
-					<h1>Reveal.js</h1>
-					<h3>The HTML Presentation Framework</h3>
-					<p>
-						<small>Created by <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small>
-					</p>
+				<section data-background="http://www.openstack.org/summit/images/summit-vancouver-bkgd.jpg" data-state="img-right">
+					<h2 style="color:white">Manila</h2>
+					<h3 style="color:white">An Update on OpenStack's Shared File Services Program</h3>
+                    <p style="color:white"><small>May 18th, 2015</small></p>
+                    <p style="color:white"><small>OpenStack Summit - Vancouver</small></p>
 				</section>
 
 				<section>
-					<h2>Hello There</h2>
-					<p>
-						reveal.js enables you to create beautiful interactive slide decks using HTML. This presentation will show you examples of what it can do.
-					</p>
+					<h3>Today's Presenters</h3>
+                    <table>
+                        <thead>
+                        <tr>
+                            <th style="text-align: center"><i>Dr. Bob Callaway</i></th>
+                            <th style="text-align: center"><i>Sean Cohen</i></th>
+                            <th style="text-align: center"><i>Mark Sturdevant</i></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><img style="border-radius: 500px; border: 4px solid #CCC; float: right !important; min-width: 250px; max-width: 300px" height="320px" src="images/callaway_headshot.jpg"/></td>
+                            <td><img style="border-radius: 500px; border: 4px solid #CCC; float: right !important; min-width: 250px; max-width: 300px" height="320px" src="https://static.sched.org/a5/901743/avatar.jpg.320x320px.jpg?a31"/></td>
+                            <td><img style="border-radius: 500px; border: 4px solid #CCC; float: right !important; min-width: 250px; max-width: 300px" height="320px" src="https://static.sched.org/a5/1787905/avatar.jpg.320x320px.jpg?5f4"/></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center"><small>Principal Architect, NetApp</small></td>
+                            <td style="text-align: center"><small>Principal Product Manager, Red Hat</small></td>
+                            <td style="text-align: center"><small>Software Engineer, HP</small></td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center"><small><i>Manila ATC</i></small></td>
+                            <td style="text-align: center"><small><i>Manila Community Member</i></small></td>
+                            <td style="text-align: center"><small><i>Manila Core Team Member</i></small></td>
+                        </tr>
+                    </tbody>
+                    </table>
 				</section>
 
-				<!-- Example of nested vertical slides -->
-				<section>
-					<section>
-						<h2>Vertical Slides</h2>
-						<p>Slides can be nested inside of each other.</p>
-						<p>Use the <em>Space</em> key to navigate through all slides.</p>
-						<br>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 1</h2>
-						<p>Nested slides are useful for adding additional detail underneath a high level horizontal slide.</p>
-					</section>
-					<section>
-						<h2>Basement Level 2</h2>
-						<p>That's it, time to go back up.</p>
-						<br>
-						<a href="#/2">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(180deg);">
-						</a>
-					</section>
+                <section data-markdown>
+                    <script type="text/template">
+## Agenda
+
+1. History of Manila &amp; who is involved? <!-- .element: class="fragment" data-fragment-index="1" -->
+2. Use cases for Manila (in context of new Kilo features)<!-- .element: class="fragment" data-fragment-index="2" -->
+3. Other new features for consumers &amp; and Manila devs<!-- .element: class="fragment" data-fragment-index="3" -->
+4. Planned work in Liberty and beyond<!-- .element: class="fragment" data-fragment-index="4" -->
+5. How to get started with Manila<!-- .element: class="fragment" data-fragment-index="5" -->
+6. Summary of Manila-related sessions here @ Summit<!-- .element: class="fragment" data-fragment-index="6" -->
+                    </script>
+                </section>
+
+                <section>
+                <h3>Manila: The OpenStack Shared File Service Program</h3>
+                    <h6>Bringing self-service, shared file services<br/>to the cloud<h6>
+                    <img src="images/manila_overview.png" height="420px"/>
 				</section>
 
-				<section>
-					<h2>Slides</h2>
-					<p>
-						Not a coder? Not a problem. There's a fully-featured visual editor for authoring these, try it out at <a href="http://slides.com" target="_blank">http://slides.com</a>.
-					</p>
-				</section>
+                <section>
+                <h3>Who is involved in Manila?</h3>
+                <table style="border-style: none">
+                    <tr>
+                        <td rowspan="2" style="font-size: 14pt;">
+                            <h4>Drivers</h4>
+                            <ul>
+                                <li>Generic (reference) driver</li>
+                                <li>NetApp Clustered Data ONTAP</li>
+                                <li>Red Hat GlusterFS</li>
+                                <li>EMC VNX</li>
+                                <li style="color: blue">HP 3PAR File Persona</li>
+                                <li style="color: blue">Hadoop Distributed File System (HDFS)</li>
+                                <li style="color: blue">Hitachi NAS Scale-out Platform (SOP)</li>
+                                <li style="color: blue">Huawei NAS</li>
+                                <li style="color: blue">IBM General Parallel File System (GPFS)</li>
+                                <li style="color: blue">Oracle ZFS Storage Appliance</li>
+                                <li style="color: blue">Quobyte FSAL with NFS Ganesha</li>
+                                <li style="color: blue">EMC Isilon</li>
+                            </ul>
+                            <p><small style="color: blue">Drivers in blue are new in Kilo</small></p>
+                        </td>
+                        <td style="font-size: 16pt;" colspan="2">
+                            <h4>Contributors</h4>
+                            <ul>
+                                <li><b>Core:</b> NetApp (PTL, 1 Core), Mirantis (2), EMC (1), HP (1), SUSE (1)</li>
+                                <li><b>Reviewers:</b> Kilo (47), All (68)</li>
+                                <li><b>Committers:</b> Kilo (38), All (66)</li>
+                                <li><b>Lines of Code:</b> Kilo (95794)</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 16pt;">
+                            <h4>Kilo Reviews</h4>
+                            <img src="images/kilo_review.png"/>
+                        </td>
+                        <td style="font-size: 16pt;">
+                            <h4>Kilo Lines of Code</h4>
+                            <img src="images/kilo_loc.png"/>
+                        </td>
+                    </tr>
+                </table>
+                </section>
 
-				<section>
-					<h2>Point of View</h2>
-					<p>
-						Press <strong>ESC</strong> to enter the slide overview.
-					</p>
-					<p>
-						Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
-					</p>
-				</section>
+                <section>
+                <h3>The age of cloud file services</h3>
+                <ul>
+                    <li>OpenStack Manila: June 2013</li>
+                    <li>Microsoft Azure Files: May 2014</li>
+                    <li>Amazon Web Services Elastic File Services: April 2015</li>
+                </ul>
+                <p/>
+                <table style="border-style: none; font-size: 16pt;">
+                    <thead>
+                    <tr>
+                        <th>Storage Service</th>
+                        <th>Amazon Web Services</th>
+                        <th>Microsoft Azure</th>
+                        <th>OpenStack</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Object</td>
+                        <td>S3</td>
+                        <td>Blob &amp; Table Storage</td>
+                        <td>Swift</td>
+                    </tr>
+                    <tr>
+                        <td>Archival (Cold) storage</td>
+                        <td>Glacier</td>
+                        <td>Azure Backup</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>Block</td>
+                        <td>Elastic Block Storage (EBS)</td>
+                        <td>Blob Storage</td>
+                        <td>Cinder</td>
+                    </tr>
+                    <tr>
+                        <td>File</td>
+                        <td>Elastic File Storage (EFS)</td>
+                        <td>Azure Files</td>
+                        <td><b>Manila</b></td>
+                    </tr>
+                </table>
+                </section>
 
-				<section>
-					<h2>Touch Optimized</h2>
-					<p>
-						Presentations look great on touch devices, like mobile phones and tablets. Simply swipe through your slides.
-					</p>
-				</section>
+                <section style="font-size: 20pt">
+                <h3>Use Case: Manila for Standalone Shared File Services Management</h3>
+                <h5>An Open, Standard API for File System Provisioning and Management</h5>
+                <ul>
+                    <li>Replace homegrown or legacy systems</li>
+                    <li>Improve IT responsiveness by providing self-service share management</li>
+                    <li>Integrate Manila with existing automation frameworks through REST API or CLI</li>
+                </ul>
+                <p/>
 
-				<section data-markdown>
-					<script type="text/template">
-						## Markdown support
+                <img src="images/homegrown.png" style="border-style: none"/>
+                </section>
 
-						Write content using inline or external Markdown.
-						Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
+                <section style="font-size: 20pt">
+                <h3>Manila can now operate in a variety of networking models</h3>
+                <h5>Supporting standalone deploments and tenant-scoped overlay networks</h5>
+                <table style="font-size: 16pt">
+                    <tr>
+                        <td style="vertical-align: top">
+                            <ul>
+                                <li>Standalone</li>
+                                <ul>
+                                    <li>Manila config has IP range</li>
+                                </ul>
+                                <li>Nova Network</li>
+                                <ul>
+                                    <li>Network &amp; Subnet</li>
+                                    <li>Flat &amp; VLAN</li>
+                                </ul>
+                                <li>Neutron</li>
+                                <ul>
+                                    <li>Network &amp; Subnet</li>
+                                    <li>VLAN, VXLAN, GRE</li>
+                                </ul>
+                            </ul>
+                        </td>
+                        <td>
+                            <img width="600px" style="border-style: none" src="images/manila_workflow_with_share_servers.png"/>
+                        </td>
+                    </tr>
+                </table>
+                </section>
 
-						```
-						<section data-markdown>
-						  ## Markdown support
+                <section style="font-size: 20pt">
+                <h3>Manila pools support in Kilo</h3>
+                <h5>Exposes vendor-specific storage constructs from heterogeneous systems through Manila API</h5>
+                <table style="font-size: 12pt">
+                    <tr>
+                        <td style="vertical-align: top" width="33%">
+                            <ul>
+                                <br/>
+                                <li>A pool-based scheduler for Manila arrived in the Kilo release</li>
+                                <br/>
+                                <li>Individual drivers define what object is represented as a separate resource pool</li>
+                                <br/>
+                                <li>All relevant information about each pool will be reported directly to the Manila scheduler</li>
+                                <br/>
+                                <li>The Manila scheduler is configurable via config options to choose different weighing, filtering options</li>
+                            </ul>
+                        </td>
+                        <td width="67%">
+                            <img width="600px" style="border-style: none" src="images/manila_pools.png"/>
+                        </td>
+                    </tr>
+                </table>
+                </section>
 
-						  Write content using inline or external Markdown.
-						  Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-						</section>
-						```
-					</script>
-				</section>
+                <section tagcloud large>
+                    Horizon Manila-UI
+                    Manage / Unmanage
+                    oslo_*
+                    share-type
+                    Heat
+                    Sahara (HDFS)
+                    Trove
+                    Nova
+                    Neutron
+                    Standalone
+                    six.text_type
+                    _LE
+                    _LW
+                    _LI
+                    Pools
+                    Devstack Plugin
+                    is_public
+                    access_level=ro
+                    driver_handles_share_servers
+                    oslo.i18n
+                    snapshot quota
+                </section>
 
-				<section>
-					<section id="fragments">
-						<h2>Fragments</h2>
-						<p>Hit the next arrow...</p>
-						<p class="fragment">... to step through ...</p>
-						<p><span class="fragment">... a</span> <span class="fragment">fragmented</span> <span class="fragment">slide.</span></p>
+                <section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png">
+                <h2>Image Backgrounds</h2>
+                        <pre><code>&lt;section data-background="image.png"&gt;</code></pre>
+                </section>
 
-						<aside class="notes">
-							This slide has fragments which are also stepped through in the notes window.
-						</aside>
-					</section>
-					<section>
-						<h2>Fragment Styles</h2>
-						<p>There's different types of fragments, like:</p>
-						<p class="fragment grow">grow</p>
-						<p class="fragment shrink">shrink</p>
-						<p class="fragment roll-in">roll-in</p>
-						<p class="fragment fade-out">fade-out</p>
-						<p class="fragment current-visible">current-visible</p>
-						<p class="fragment highlight-red">highlight-red</p>
-						<p class="fragment highlight-blue">highlight-blue</p>
-					</section>
-				</section>
-
-				<section id="transitions">
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like: <br>
-						<a href="?transition=none#/transitions">None</a> -
-						<a href="?transition=fade#/transitions">Fade</a> -
-						<a href="?transition=slide#/transitions">Slide</a> -
-						<a href="?transition=convex#/transitions">Convex</a> -
-						<a href="?transition=concave#/transitions">Concave</a> -
-						<a href="?transition=zoom#/transitions">Zoom</a>
-					</p>
-				</section>
-
-				<section id="themes">
-					<h2>Themes</h2>
-					<p>
-						reveal.js comes with a few themes built in: <br>
-						<!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. -->
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black (default)</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/league.css'); return false;">League</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/sky.css'); return false;">Sky</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/beige.css'); return false;">Beige</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/simple.css'); return false;">Simple</a> <br>
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/serif.css'); return false;">Serif</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/night.css'); return false;">Night</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/moon.css'); return false;">Moon</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/solarized.css'); return false;">Solarized</a>
-					</p>
-				</section>
-
-				<section>
-					<section data-background="#dddddd">
-						<h2>Slide Backgrounds</h2>
-						<p>
-							Set <code>data-background="#dddddd"</code> on a slide to change the background color. All CSS color formats are supported.
-						</p>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png">
-						<h2>Image Backgrounds</h2>
-						<pre><code>&lt;section data-background="image.png"&gt;</code></pre>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png" data-background-repeat="repeat" data-background-size="100px">
-						<h2>Tiled Backgrounds</h2>
-						<pre><code style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
-					</section>
-					<section data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm" data-background-color="#000000">
-						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
-							<h2>Video Backgrounds</h2>
-							<pre><code style="word-wrap: break-word;">&lt;section data-background-video="video.mp4,video.webm"&gt;</code></pre>
-						</div>
-					</section>
-				</section>
-
-				<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						Different background transitions are available via the backgroundTransition option. This one's called "zoom".
-					</p>
-					<pre><code>Reveal.configure({ backgroundTransition: 'zoom' })</code></pre>
-				</section>
 
 				<section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
 					<h2>Background Transitions</h2>
@@ -240,54 +313,6 @@ function linkify( selector ) {
 					<p>Code syntax highlighting courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
 				</section>
 
-				<section>
-					<h2>Marvelous List</h2>
-					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-					</ul>
-				</section>
-
-				<section>
-					<h2>Fantastic Ordered List</h2>
-					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
-					</ol>
-				</section>
-
-				<section>
-					<h2>Tabular Tables</h2>
-					<table>
-						<thead>
-							<tr>
-								<th>Item</th>
-								<th>Value</th>
-								<th>Quantity</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Apples</td>
-								<td>$1</td>
-								<td>7</td>
-							<tr>
-							<tr>
-								<td>Lemonade</td>
-								<td>$2</td>
-								<td>18</td>
-							<tr>
-							<tr>
-								<td>Bread</td>
-								<td>$3</td>
-								<td>2</td>
-							<tr>
-						</tbody>
-					</table>
-				</section>
 
 				<section>
 					<h2>Clever Quotes</h2>
@@ -310,58 +335,9 @@ function linkify( selector ) {
 				</section>
 
 				<section>
-					<h2>Speaker View</h2>
-					<p>There's a <a href="https://github.com/hakimel/reveal.js#speaker-notes">speaker view</a>. It includes a timer, preview of the upcoming slide as well as your speaker notes.</p>
-					<p>Press the <em>S</em> key to try it out.</p>
-
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
-				</section>
-
-				<section>
 					<h2>Export to PDF</h2>
 					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, here's an example:</p>
 					<iframe src="//www.slideshare.net/slideshow/embed_code/42840540" width="445" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
-				</section>
-
-				<section>
-					<h2>Global State</h2>
-					<p>
-						Set <code>data-state="something"</code> on a slide and <code>"something"</code>
-						will be added as a class to the document element when the slide is open. This lets you
-						apply broader style changes, like switching the page background.
-					</p>
-				</section>
-
-				<section data-state="customevent">
-					<h2>State Events</h2>
-					<p>
-						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
-					</p>
-					<pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
-Reveal.addEventListener( 'customevent', function() {
-	console.log( '"customevent" has fired' );
-} );
-					</code></pre>
-				</section>
-
-				<section>
-					<h2>Take a Moment</h2>
-					<p>
-						Press B or . on your keyboard to pause the presentation. This is helpful when you're on stage and want to take distracting slides off the screen.
-					</p>
-				</section>
-
-				<section>
-					<h2>Much more</h2>
-					<ul>
-						<li>Right-to-left support</li>
-						<li><a href="https://github.com/hakimel/reveal.js#api">Extensive JavaScript API</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#auto-sliding">Auto-progression</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#parallax-background">Parallax backgrounds</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#keyboard-bindings">Custom keyboard bindings</a></li>
-					</ul>
 				</section>
 
 				<section style="text-align: left;">
@@ -398,7 +374,7 @@ Reveal.addEventListener( 'customevent', function() {
 					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
 					{ src: 'plugin/zoom-js/zoom.js', async: true },
-					{ src: 'plugin/notes/notes.js', async: true }
+					{ src: 'plugin/tagcloud/tagcloud.js', async: true } 
 				]
 			});
 
