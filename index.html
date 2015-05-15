@@ -339,6 +339,51 @@
                 </table>
                 </section>
 
+                <section style="font-size: 24pt">
+                <h3>Manila Devstack Plugin</h3>
+                <table>
+                    <tr>
+                        <td style="vertical-align: top; font-size: 16pt">
+                            <ul>
+                                <li>DevStack supports a standard mechanism for including plugins from external repositories</li>
+                                <li>One line <code>local.conf</code> entry</li>
+                                <ul>
+                                    <li><code style="font-size: 12pt">enable_plugin manila https://github.com/openstack/manila</code></li>
+                                </ul>
+                                <li>No more copying <code>extras.d</code> or <code>lib</code> files</li>
+                                <li>Howto: https://wiki.openstack.org/wiki/Manila/KiloDevstack</li>
+                            </ul>
+                        </td>
+                    </td>
+                    <td>
+                        <img style="border-style: none" src="images/devstack.png"/>
+                    </td>
+                </table>
+                </section>
+
+                <section style="font-size: 24pt">
+                <h3>Manila Share Manage / Unmanage</h3>
+                <h5>Bring existing shares into Manila</h5>
+                <table>
+                    <tr>
+                        <td style="vertical-align: top; font-size: 24pt">
+                            <ul>
+                                <li>API implemented in Kilo</li>
+                                <ul>
+                                    <li>Does not support drivers with share servers (no share networks)</li>
+                                    <li>Only the generic driver (so far)</li>
+                                </ul>
+                                <br/>
+                                <li>More driver support expected during Liberty</li>
+                            </ul>
+                        </td>
+                    </td>
+                    <td>
+                        <img style="border-style: none" src="images/manage_unmanage.png"/>
+                    </td>
+                </table>
+                </section>
+
                 <section>
 					<h3>Get Involved with Manila!</h3>
                     <ul>
