@@ -132,11 +132,11 @@
                     <tr>
                         <td style="font-size: 16pt;">
                             <h4>Kilo Reviews</h4>
-                            <img src="images/kilo_review.png"/>
+                            <img width="480" src="images/kilo_review.png"/>
                         </td>
                         <td style="font-size: 16pt;">
                             <h4>Kilo Lines of Code</h4>
-                            <img src="images/kilo_loc.png"/>
+                            <img width="480" src="images/kilo_loc.png"/>
                         </td>
                     </tr>
                 </table>
@@ -333,6 +333,88 @@
                 </section>
 
                 <section style="font-size: 20pt">
+                <h3>Devops / Continuous Integration</h3>
+                <h5>Speeding up large dev/test suites through parallel testing</h5>
+                <table>
+                    <tr>
+                        <td style="vertical-align: top" width="40%">
+                            <h5>Challenge</h5>
+                            <ul style="font-size: 16pt">
+                                <li>Speed up Dev/Test refresh</li>
+                                <li>Main cause for slow, sequential tests is dependence on data</li>
+                                <li>Traditionally test cases clear the database of app under test and populate with required data</li>
+                            </ul>
+                            <br/>
+                            <br/>
+                            <h5>Solution</h5>
+                            <ul style="font-size: 16pt">
+                                <li>Database data volumes are exposed as Manila shares</li>
+                                <li>Shares are cloned for each test</li>
+                                <li>Create container and isolate test case using container and cloned share</li>
+                                <li>Test run in parallel, dramatically reducing time to completion</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <img style="border-style: none" src="images/devops_ci.png"/>
+                        </td>
+                    </tr>
+                </table>
+                </section>
+
+                <section>
+                <h3>Use Case: NAS as a Service</h3>
+                <h5>Provide self-service and management for shared file systems</h5>
+                <span style="font-size: 20pt">
+                <p>Deployment of OpenStack with Manila, integrated with Manila storage drivers to deliver self-service provisioning and lifecycle management of shares.</p>
+                <ul>
+                    <li>Accelerated time for Shared File Systems being made available to lines of business thru self service.</li>
+                    <br/>
+                    <li>Increased Flexibility</li>
+                    <ul>
+                        <li>Self-Management of devops infrastructure.</li>
+                    </ul>
+                    <br/>
+                    <li>Increased Elasticity </li>
+                    <ul>
+                        <li>Liberty focus: Add the ability to expand a share <i>(patch under review)</i></li>
+                    </ul>
+                </ul>
+                </span>
+                </section>
+
+                <section style="font-size: 20pt">
+                <h3>Use Case: Automation and Integration with Manila Open API</h3>
+                <h5>Build rich new services with integration to Manila</h5>
+                <table>
+                    <tr>
+                        <td style="vertical-align: top" width="40%">
+                            <h5>Challenge</h5>
+                            <ul style="font-size: 16pt">
+                                <li>To leverage current automation and processes to enable the use of Manila to provision storage</li>
+                            </ul>
+                            <br/>
+                            <br/>
+                            <h5>Solution</h5>
+                            <ul style="font-size: 16pt">
+                                <li>Continue to leverage current investment in automation tools, and provide Manila Share provisioning thru the REST API interface.</li>
+                                <li>Manila API integration with Heat to deploy pre-defined topologies in a repeatable and consistent fashion.</li>
+                                <li>Use cloud orchestration and automation tools like Cloudify to further integrate shared file storage</li>
+                            </ul>
+                        </td>
+                        <td style="vertical-align: top" width="40%">
+                            <h5>Benefits</h5>
+                            <ul style="font-size: 16pt">
+                                <li>Replace home grown or legacy systems to provision shared file services</li>
+                                <li>Ability to deploy and manage a broad spectrum of cloud resources with limited development</li>
+                                <li>Integration of current REST enabled applications to Manila as part of a workflow</li>
+                                <li>Build integration with other OpenStack projects like Trove</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+                </section>
+
+                <section style="font-size: 20pt">
                 <h3>Heat with Manila</h3>
                 <h5>Adding shared file systems as first-class resources in Heat templates</h5>
                 <img style="border-style: none" src="images/manila_heat.png"/>
@@ -357,7 +439,7 @@
                 <h2>Other new features for Manila consumers<br/><i>(and developers)</i></h2>
                 </section>
 
-                <section>
+                <section data-transition="fade">
                 <h3>New in Kilo:</h3>
                 <img style="border-style: none" src="images/tag_cloud.png"/>
                 </section>
@@ -620,77 +702,6 @@
 				<section data-background="images/summit-vancouver-bkgd.jpg" data-state="img-right">
 					<h1 style="color:white">Q &amp; A</h1>
 				</section>
-<!--
-                <section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png">
-                <h2>Image Backgrounds</h2>
-                        <pre><code>&lt;section data-background="image.png"&gt;</code></pre>
-                </section>
-
-
-				<section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						You can override background transitions per-slide.
-					</p>
-					<pre><code style="word-wrap: break-word;">&lt;section data-background-transition="zoom"&gt;</code></pre>
-				</section>
-
-				<section>
-					<h2>Pretty Code</h2>
-					<pre><code data-trim contenteditable>
-function linkify( selector ) {
-  if( supports3DTransforms ) {
-
-    var nodes = document.querySelectorAll( selector );
-
-    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-      var node = nodes[i];
-
-      if( !node.className ) {
-        node.className += ' roll';
-      }
-    }
-  }
-}
-					</code></pre>
-					<p>Code syntax highlighting courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
-				</section>
-
-
-				<section>
-					<h2>Clever Quotes</h2>
-					<p>
-						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
-					</p>
-					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
-						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
-					</blockquote>
-				</section>
-
-				<section>
-					<h2>Intergalactic Interconnections</h2>
-					<p>
-						You can link between slides internally,
-						<a href="#/2/3">like this</a>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Export to PDF</h2>
-					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, here's an example:</p>
-					<iframe src="//www.slideshare.net/slideshow/embed_code/42840540" width="445" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
-				</section>
-
-				<section style="text-align: left;">
-					<h1>THE END</h1>
-					<p>
-						- <a href="http://slides.com">Try the online editor</a> <br>
-						- <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
-					</p>
-				</section>
-                -->
 			</div>
 
 		</div>
