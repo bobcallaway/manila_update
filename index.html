@@ -187,6 +187,36 @@
                 </table>
                 </section>
 
+                <section>
+                <h3>Use Cases for Manila</h3>
+                <span style="font-size: 20pt">
+                <ul>
+                    <li>Big Data</li>
+                    <ul>
+                        <li>Manila’s HDFS native driver plugin</li>
+                        <li>Sahara integration</li>
+                    </ul><br/>
+                    <li>Database as a service</li>
+                    <ul>
+                        <li>Trove integration</li>
+                    </ul><br/>
+                    <li>Support legacy enterprise applications</li>
+                    <br/>
+                    <li>Cross-tenant data sharing</li>
+                    <br/>
+                    <li>On-Demand development and build environments</li>
+                    <ul>
+                        <li>Continuous Integration</li>
+                    </ul><br/>
+                    <li>Hybrid Cloud shares</li>
+                    <ul>
+                        <li>External consumption of shares </li>
+                        <li>Migration of workloads to the cloud from on-premise file shares</li>
+                    </ul>
+                </ul>
+            </span>
+                </section>
+
                 <section style="font-size: 20pt">
                 <h3>Use Case: Manila for Standalone Shared File Services Management</h3>
                 <h5>An Open, Standard API for File System Provisioning and Management</h5>
@@ -254,6 +284,24 @@
                 </table>
                 </section>
 
+                <section style="font-size: 24pt">
+                <h3>Use Case: Move Enterprise Applications to OpenStack</h3>
+                <h5>Move workloads to OpenStack clouds without rewriting them</h5>
+                <table>
+                    <tr>
+                        <td>
+                            <img style="border-style: none" width="1200" src="images/enterprise_apps.png"/>
+                        </td>
+                        <td style="vertical-align: top; font-size: 24pt">
+                            <ul>
+                                <li>Enable transition of workloads from existing virtualizations onto OpenStack to gain lower cost, heterogeneous infrastructure</li>
+                                <li>TBD</li>
+                            </ul>
+                        </td>
+                    </td>
+                </table>
+                </section>
+
                 <section style="font-size: 20pt">
                 <h3>Deliver workload-aligned shared file storage offerings</h3>
                 <h5>Create a storage service catalog that maps the differentiated features of storage to Manila</h5>
@@ -290,28 +338,28 @@
                 <img style="border-style: none" src="images/manila_heat.png"/>
                 </section>
 
-                <section tagcloud>
-                    Horizon Manila-UI
-                    Manage / Unmanage
-                    oslo_*
-                    share-type
-                    Heat
-                    Sahara (HDFS)
-                    Trove
-                    Nova
-                    Neutron
-                    Standalone
-                    six.text_type
-                    _LE
-                    _LW
-                    _LI
-                    Pools
-                    Devstack Plugin
-                    is_public
-                    access_level=ro
-                    driver_handles_share_servers
-                    oslo.i18n
-                    snapshot quota
+                <section>
+                <h3>Use Case: Database as a Service</h3>
+                <h5>Support different DBaaS topologies with Manila</h5>
+                <ul>
+                    <li>Ability to provide private cloud options for databases built on shared file systems</li>
+                    <li>Transparency and and coherent database management</li>
+                    <li>Simplification for devops</li>
+                    <li>Easy provisioning, and choice of storage features using share types</li>
+                    <ul>
+                        <li>Bring database applications into your private cloud with full visibility and control</li>
+                        <li>Integrate Manila shares with other OpenStack projects, such as Trove or Sahara</li>
+                    </ul>
+                </ul>
+                </section>
+
+                <section data-transition="zoom">
+                <h2>Other new features for Manila consumers<br/><i>(and developers)</i></h2>
+                </section>
+
+                <section>
+                <h3>New in Kilo:</h3>
+                <img style="border-style: none" src="images/tag_cloud.png"/>
                 </section>
 
                 <section style="font-size: 20pt">
@@ -385,6 +433,142 @@
                 </section>
 
                 <section>
+                <h1>Planned work in Liberty and beyond...</h1>
+                </section>
+
+                <section style="font-size: 24pt">
+                <h3>Liberty Design Summit Topics</h3>
+                <h5>Wednesday and Thursday</h5>
+                <table>
+                    <tr>
+                        <td style="vertical-align: top; font-size: 24pt">
+                            <ul>
+                                <li>Mount Automation</li>
+                                <li>Share Migration</li>
+                                <li>Replication</li>
+                                <li>Consistency Groups</li>
+                                <li>Thin Provisioning</li>
+                            </ul>
+                        </td>
+                        <td style="vertical-align: top; font-size: 24pt">
+                            <ul>
+                                <li>Versioned Objects</li>
+                                <li>API versioning</li>
+                                <li>Fault indication</li>
+                                <li>Shapshot/Share relationship</li>
+                                <li>Manila Service Image</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+                </section>
+
+                <section style="font-size: 24pt">
+                <h3>Third party CI</h3>
+                <table>
+                    <tr>
+                        <td style="vertical-align: top; font-size: 16pt" width="400">
+                            <h4 style="color: blue">Goal:</h4>
+                            <ul>
+                                <li>Every driver should have a working/reporting CI by end of Liberty</li>
+                            </ul>
+                            <br/>
+                            <br/>
+                            <h4 style="color: blue">Specific Deadlines:</h4>
+                            <ul>
+                                <li>TBD</li>
+                                <li>Most Manila vendors have some 3rd-party CI experience (e.g. Cinder CI)</li>
+                            </ul>
+                        </td>
+                        <td style="vertical-align: top; font-size: 18pt">
+                            <h4><span style="color: green">1. Silent → 2. Reporting</span><span style="color: red">→ 3. Voting</span></h4>
+                            <ul>
+                                <li>3rd-party CI will be voting eventually</li>
+                                <ul>
+                                    <li>Needs to be stable without a lot of false negatives</li>
+                                </ul>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+                <img src="images/third_party_ci.png" style="border-style: none"/>
+                <small>Example taken from Manila</small>
+                </section>
+
+                <section>
+                <h3>Mount Automation:</h3>
+                <img style="border-style: none" src="images/mount_automation.png"/>
+                </section>
+
+                <section style="font-size: 24pt">
+                <table>
+                    <tr>
+                        <td>
+                            <h4>Replication</h4>
+                            <img src="images/replication.png" style="border-style: none"/>
+                            <h4>Consistency Groups</h4>
+                            <img src="images/consistency_groups.png" style="border-style: none"/>
+                        </td>
+                        <td style="vertical-align: top; font-size: 20pt">
+                            <h6>Example CG Snapshot Scenario:</h6>
+                            <ol>
+                                <br/>
+                                <li>Create a consistency group given share types</li>
+                                <li>A consistency group can only contain shares hosted by the same back end</li>
+                                <li>Create a share and add it to a CG</li>
+                                <li>List CGs, show CG</li>
+                                <li>Create CG snapshot, list/show CG snapshot(s), delete CG snapshot(s)</li>
+                                <li>Delete CG</li>
+                            </ol>
+                        </td>
+                    </tr>
+                </table>
+                </section>
+
+                <section style="font-size: 24pt">
+                <h3>Share migration</h3>
+                <table>
+                    <tr>
+                        <td style="vertical-align: top; font-size: 18pt">
+                            <ul>
+                                <li>Administrator moving shares from pool to pool</li>
+                                <br/>
+                                <li>Administrator moving shares from host to host</li>
+                                <br/>
+                                <li>Driver optimized implementation</li>
+                                <br/>
+                                <li>General data copying migration</li>
+                                <br/>
+                                <li>Changing share type</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <img src="images/share_migration.png" style="border-style: none"/>
+                        </td>
+                    </tr>
+                </table>
+                </section>
+
+                <section style="font-size: 24pt">
+                <h2>How to get started with Manila</h2>
+                <table>
+                    <tr>
+                        <td style="vertical-align: top; font-size: 16pt" width="320px">
+                            <ul>
+                                <br/>
+                                <li>The Manila File Share service is already available in OpenStack RDO community-supported distribution (via packstack) since the Juno release.</li>
+                                <br/>
+                                <li>The Manila File Share service is going to be introduced in the upcoming Red Hat Enterprise Linux OpenStack Platform 7 as a Tech Preview this summer.</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <img src="images/manila_overview.png" style="border-style: none"/>
+                        </td>
+                    </tr>
+                </table>
+                </section>
+
+                <section>
 					<h3>Get Involved with Manila!</h3>
                     <ul>
                         <li>https://github.com/openstack/manila</li>
@@ -398,6 +582,40 @@
                         <li>Weekly meetings @ Thursday, 15:00 UTC</li>
                     </ul>
 				</section>
+
+                <section style="font-size: 24pt">
+                <h3>Manila Summit Sessions</h3>
+                <table>
+                    <tr>
+                        <td style="vertical-align: top; font-size: 16pt">
+                            <ul>
+                                <li><span style="color: blue">Manila</span>: An Update on OpenStack’s Shared File Services Program</li>
+                                <br/>
+                                <li>Build and operate your first OpenStack application</li>
+                                <br/>
+                                <li>Keeping OpenStack storage trendy with Ceph and containers</li>
+                                <br/>
+                                <li><span style="color: blue">Manila</span>: Taking OpenStack Shared File Storage to the Telco Cloud</li>
+                                <br/>
+                                <li>Why Use Enterprise Storage with OpenStack?  NetApp’s Portfolio Story</li>
+                            </ul>
+                        </td>
+                        <td style="vertical-align: top; font-size: 16pt">
+                            <ul>
+                                <li>Big Data Analytics and Docker: The Thrilla in <span style="color: blue">Manila</span></li>
+                                <br/>
+                                <li><span style="color: blue">Manila</span> 101 &amp; Use Cases</li>
+                                <br/>
+                                <li>Thomson Reuters: <span style="color: blue">Manila</span> Deployment Customer Story</li>
+                                <br/>
+                                <li>Addressing storage management challenges using open source SDS controller</li>
+                                <br/>
+                                <li>Benchmarking Sahara-based Big Data as a Service solutions</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
+                </section>
 
 				<section data-background="images/summit-vancouver-bkgd.jpg" data-state="img-right">
 					<h1 style="color:white">Q &amp; A</h1>
@@ -499,7 +717,6 @@ function linkify( selector ) {
 					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
 					{ src: 'plugin/zoom-js/zoom.js', async: true },
-					{ src: 'plugin/tagcloud/tagcloud.js', async: true } 
 				]
 			});
 
