@@ -290,7 +290,7 @@
                 <table>
                     <tr>
                         <td>
-                            <img style="border-style: none" src="images/enterprise_apps.png" width="480"/>
+                            <img style="border-style: none" src="images/enterprise_apps.png" width="1024"/>
                         </td>
                         <td style="vertical-align: top; font-size: 20pt">
                             <br/>
@@ -364,19 +364,22 @@
                 </section>
 
                 <section>
-                <h3>Use Case: NAS as a Service</h3>
+                <h3>Use Case: Shared File Systems On Demand</h3>
                 <h5>Provide self-service and management for shared file systems</h5>
                 <span style="font-size: 20pt">
-                <p>Deployment of OpenStack with Manila, integrated with Manila storage drivers to deliver self-service provisioning and lifecycle management of shares.</p>
+                <p>Deployment of OpenStack with Manila, integrated with drivers to deliver self-service provisioning and lifecycle management of shares.</p>
                 <ul>
-                    <li>Accelerated time for Shared File Systems being made available to lines of business thru self service.</li>
+                    <li><b>Faster time to value</b></li>
+                    <ul>
+                        <li>Accelerated time for Shared File Systems being made available to lines of business thru self service.</li>
+                    </ul>
                     <br/>
-                    <li>Increased Flexibility</li>
+                    <li><b>Increased Flexibility</b></li>
                     <ul>
                         <li>Self-Management of devops infrastructure.</li>
                     </ul>
                     <br/>
-                    <li>Increased Elasticity </li>
+                    <li><b>Elastic to meet demands of workloads</b></li>
                     <ul>
                         <li>Liberty focus: Add the ability to expand a share <i>(patch under review)</i></li>
                     </ul>
@@ -385,31 +388,24 @@
                 </section>
 
                 <section style="font-size: 20pt">
-                <h3>Use Case: Automation and Integration with Manila Open API</h3>
+                <h3>Use Case: Automation and Integration with an Open, Standard API</h3>
                 <h5>Build rich new services with integration to Manila</h5>
                 <table>
                     <tr>
                         <td style="vertical-align: top" width="40%">
-                            <h5>Challenge</h5>
+                            <h5>Goal</h5>
                             <ul style="font-size: 16pt">
-                                <li>To leverage current automation and processes to enable the use of Manila to provision storage</li>
-                            </ul>
-                            <br/>
-                            <br/>
-                            <h5>Solution</h5>
-                            <ul style="font-size: 16pt">
-                                <li>Continue to leverage current investment in automation tools, and provide Manila Share provisioning thru the REST API interface.</li>
-                                <li>Manila API integration with Heat to deploy pre-defined topologies in a repeatable and consistent fashion.</li>
-                                <li>Use cloud orchestration and automation tools like Cloudify to further integrate shared file storage</li>
+                                <li>Leverage current investment in automation, and provide share provisioning thru REST API</li>
+                                <li>Integration with Heat to repeatably deploy topologies</li>
+                                <li>Use cloud orchestration and automation tools to further integrate into existing workflow</li>
                             </ul>
                         </td>
                         <td style="vertical-align: top" width="40%">
                             <h5>Benefits</h5>
                             <ul style="font-size: 16pt">
-                                <li>Replace home grown or legacy systems to provision shared file services</li>
-                                <li>Ability to deploy and manage a broad spectrum of cloud resources with limited development</li>
-                                <li>Integration of current REST enabled applications to Manila as part of a workflow</li>
-                                <li>Build integration with other OpenStack projects like Trove</li>
+                                <li>Replace home grown or legacy systems</li>
+                                <li>Ability to deploy and manage a broad spectrum of cloud resources with limited investment</li>
+                                <li>Build integration with other OpenStack &amp; open-source projects (e.g Trove)</li>
                             </ul>
                         </td>
                     </tr>
@@ -422,6 +418,40 @@
                 <img style="border-style: none" src="images/manila_heat.png"/>
                 </section>
 
+                <section>
+                <h3>Use Cases for Manila</h3>
+                <span style="font-size: 20pt">
+                <ul>
+                    <li>Big Data</li>
+                    <ul>
+                        <li>Manila’s HDFS native driver plugin</li>
+                        <li>Sahara integration</li>
+                    </ul><br/>
+                    <li>Database as a service</li>
+                    <ul>
+                        <li>Ability to provide private cloud options for databases built on shared file systems</li>
+                        <li>Transparency and and coherent database management</li>
+                        <li>Trove integration</li>
+                    </ul><br/>
+                    <!--
+                    <li>Support legacy enterprise applications</li>
+                    <br/>
+                    <li>Cross-tenant data sharing</li>
+                    <br/>
+                    <li>On-Demand development and build environments</li>
+                    <ul>
+                        <li>Continuous Integration</li>
+                    </ul><br/>
+                    -->
+                    <li>Hybrid Cloud shares</li>
+                    <ul>
+                        <li>External consumption of shares </li>
+                        <li>Migration of workloads to the cloud from on-premise file shares</li>
+                    </ul>
+                </ul>
+            </span>
+                </section>
+                <!--
                 <section>
                 <h3>Use Case: Database as a Service</h3>
                 <h5>Support different DBaaS topologies with Manila</h5>
@@ -436,6 +466,7 @@
                     </ul>
                 </ul>
                 </section>
+                -->
 
                 <section data-transition="zoom">
                 <h2>Other new features for Manila consumers<br/><i>(and developers)</i></h2>
@@ -446,7 +477,7 @@
                 <img style="border-style: none" src="images/tag_cloud.png"/>
                 </section>
 
-                <section style="font-size: 20pt">
+                <section style="font-size: 24pt">
                 <h3>Manila-UI</h3>
                 <h5>Horizon: The OpenStack Dashboard Project</h5>
                 <ul>
@@ -521,33 +552,6 @@
                 </section>
 
                 <section style="font-size: 24pt">
-                <h3>Liberty Design Summit Topics</h3>
-                <h5>Wednesday and Thursday</h5>
-                <table>
-                    <tr>
-                        <td style="vertical-align: top; font-size: 24pt">
-                            <ul>
-                                <li>Mount Automation</li>
-                                <li>Share Migration</li>
-                                <li>Replication</li>
-                                <li>Consistency Groups</li>
-                                <li>Thin Provisioning</li>
-                            </ul>
-                        </td>
-                        <td style="vertical-align: top; font-size: 24pt">
-                            <ul>
-                                <li>Versioned Objects</li>
-                                <li>API versioning</li>
-                                <li>Fault indication</li>
-                                <li>Shapshot/Share relationship</li>
-                                <li>Manila Service Image</li>
-                            </ul>
-                        </td>
-                    </tr>
-                </table>
-                </section>
-
-                <section style="font-size: 24pt">
                 <h3>Third party CI</h3>
                 <table>
                     <tr>
@@ -577,6 +581,33 @@
                 </table>
                 <img src="images/third_party_ci.png" style="border-style: none"/>
                 <small>Example taken from Manila</small>
+                </section>
+
+                <section style="font-size: 24pt">
+                <h3>Liberty Design Summit Topics</h3>
+                <h5>Wednesday and Thursday</h5>
+                <table>
+                    <tr>
+                        <td style="vertical-align: top; font-size: 24pt">
+                            <ul>
+                                <li>Mount Automation</li>
+                                <li>Share Migration</li>
+                                <li>Replication</li>
+                                <li>Consistency Groups</li>
+                                <li>Thin Provisioning</li>
+                            </ul>
+                        </td>
+                        <td style="vertical-align: top; font-size: 24pt">
+                            <ul>
+                                <li>Versioned Objects</li>
+                                <li>API versioning</li>
+                                <li>Fault indication</li>
+                                <li>Shapshot/Share relationship</li>
+                                <li>Manila Service Image</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </table>
                 </section>
 
                 <section>
